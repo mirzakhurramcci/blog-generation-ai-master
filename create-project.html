@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>ContentBlitz - Tutorials</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/customStyles.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- =======================================================
+  * Template Name: Ninestars
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/ninestars-free-bootstrap-3-theme-for-creative/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <h1 class="text-light">
+             
+            <a href="home.html"><span>ContentBlitz</span></a>
+          </h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="home.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="home.html">Projects</a>
+            </li>
+           
+            <li>
+              <a class="nav-link scrollto" href="billing.html">Billing</a>
+            </li>
+            <li class="nav-item dropdown">
+              <img src="assets/img/profile_icon.png" alt="User Avatar" class="user-avatar nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <!-- Dropdown items go here -->
+                <p class="dropdown-item" id="userEmail"></p>
+                <p class="dropdown-item" id="userCredits"></p>
+                <div class="dropdown-divider"></div>
+                <span class="dropdown-item" id="onLogout" style="cursor: pointer;">Logout</span>
+              </div>
+            </li>
+            
+           
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+
+    <div id="loadingSpinner" class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="container col-10" style="margin-top: 7rem">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Project</li>
+        </ol>
+      </nav>
+      <div class="col-4">
+        <h1 id="tlHeading">Create Project</h1>
+        <p>Setup a project to start generating and publishing content.</p>
+        <form id="createSiteForm">
+          <div class="form-group">
+            <label for="title">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              name="title"
+              aria-describedby="emailHelp"
+              placeholder="ContentBlitz"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="url">Url</label>
+            <input
+              type="text"
+              class="form-control"
+              id="url"
+              name="url"
+              placeholder="https://ContentBlitzai.com"
+              required
+            />
+          </div>
+          <input type="submit" value="Submit" class="mt-3 btn btn-primary" />
+        </form>
+      </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      $(document).ready(function() {
+
+        function showLoadingSpinner() {
+          $("#loadingSpinner").show();
+        }
+
+        // Function to hide the loading spinner
+        function hideLoadingSpinner() {
+          $("#loadingSpinner").hide();
+        }
+
+        function getQueryParamValue(parameter) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parameter);
+        }
+
+        function populateForm(data) {
+          $("#url").val(data.url);
+          $("#title").val(data.title)
+        }
+
+        var user = JSON.parse(localStorage.getItem("user"));
+        var userId = user.id;
+        var projectId = getQueryParamValue('id');
+
+        if (projectId && projectId > 0) {
+          $("#tlHeading").text("Update Project");
+        }
+
+        if (!user) {
+          window.location.href = "/index.html";
+        } else {
+          $("#userEmail").text(user.email);
+          $("#userCredits").text("Credits: " + user.credits);
+        }
+
+        $(document).on("click", "#onLogout", function() {
+          // Code to be executed when the button is clicked
+         localStorage.removeItem("user");
+         window.location.href = "/index.html";
+        });
+
+        $.ajax({
+        type: "GET",
+        url: "https://app.contentblitz.ai:8080/api/v1/site/" + projectId, // Replace with your API endpoint URL
+        success: function(data) {
+            // Call the function to populate the table with the fetched data
+            hideLoadingSpinner();
+            console.log(data);
+            populateForm(data.data);
+        },
+        error: function(error) {
+            hideLoadingSpinner();
+            console.error("Error:", error);
+        }
+       });
+
+        
+        $("#createSiteForm").submit(function(event) { 
+
+          event.preventDefault(); // Prevent default form submission
+          showLoadingSpinner();
+
+          var apiURL = "https://app.contentblitz.ai:8080/api/v1/site";
+
+          
+
+          if (projectId && projectId > 0) {
+           
+            var body = {
+              url: $("#url").val(),
+              title: $("#title").val()
+            }
+
+            $.ajax({
+              type: "PATCH",
+              url: apiURL + "/" + projectId,
+              data: JSON.stringify(body),
+              contentType: "application/json",
+              success: function(response) {
+                debugger;
+                  // Handle the successful API response here
+                  window.location.href = "/home.html";
+                  hideLoadingSpinner();
+                  console.log("Response:", response);
+              },
+              error: function(error) {
+                  // Handle any errors that occur during the API call
+                  hideLoadingSpinner();
+                  console.error("Error:", error);
+              }
+            });
+
+          } else {
+
+            var body = {
+              url: $("#url").val(),
+              title: $("#title").val(),
+              userId: userId
+            }
+           
+            $.ajax({
+              type: "POST",
+              url: apiURL,
+              data: JSON.stringify(body),
+              contentType: "application/json",
+              success: function(response) {
+                  // Handle the successful API response here
+                  window.location.href = "/home.html";
+                  hideLoadingSpinner();
+                  console.log("Response:", response);
+              },
+              error: function(error) {
+                  // Handle any errors that occur during the API call
+                  hideLoadingSpinner();
+                  console.error("Error:", error);
+              }
+            });
+          }
+          
+
+         
+
+        });
+      });
+    </script>
+  </body>
+</html>
